@@ -19,7 +19,6 @@ export class HeaderComponent implements OnInit {
     }
 
     onSubmitForm(value:any){
-        console.log(value)
         this.apiServices.getSearchProducts(value).subscribe((res)=>{
             console.log("ress", res)
             this.listData = res;

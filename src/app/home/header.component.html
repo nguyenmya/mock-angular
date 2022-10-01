@@ -13,10 +13,11 @@
       <div class="navbar_between">
         <div class="navbar_input">
           <form #myForm = "ngForm" (ngSubmit)="onSubmitForm(myForm.value)"> 
-            <button class="navbar_input-search" type="submit">            <img class="navbar_input-search"  src="../../assets/image/Vector.svg" alt=""  />
+            <button class="btn-search" type="submit">          
+                <img class="navbar_input-search"  src="../../assets/image/Vector.svg" alt=""  />
             </button>
-            <input type="text"  ngModel name="search"/>
-            <!-- <img src="../../assets/image/icon_close.svg" alt="" /> -->
+            <input type="text"  ngModel name="search" class="search-text"/>
+            <!-- <img  src="../../assets/image/icon_close.svg" alt="" /> -->
           
           </form>
          
@@ -374,7 +375,7 @@
               <h3>
               {{item.name}}
               </h3>
-              <h1>              {{item.price}}$
+              <h1>    {{item.price}}$
               </h1>
               <span>Eligible for Shipping To Mars or somewhere else</span>
               <div class="product_item-evaluate">
