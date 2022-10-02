@@ -1,36 +1,33 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core';
 import { MockService } from '../services/apiServices';
 
 @Component({
-    selector: 'app-header',
-    templateUrl: './header.component.html',
-    styleUrls: ['../app.component.scss']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['../app.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-    listData: any= [];
-    constructor(private apiServices: MockService){ }
-    ngOnInit(): void {
-        console.log("aaaa")
-        this.apiServices.getAllProducts().subscribe((res)=>{
-            console.log("ress", res)
-            this.listData = res;
-            console.log(this.listData)
-        })
-    }
+  listData: any = [];
+  indexTab: number = 0;
 
-    onSubmitForm(value:any){
-        this.apiServices.getSearchProducts(value).subscribe((res)=>{
-            console.log("ress", res)
-            this.listData = res;
-            console.log(this.listData)
-        })
-    }
-    
-    onSubmitFormVintage(value:any){
-        this.apiServices.getSearchProductsVintage(value).subscribe((res)=>{
-            console.log("ress", res)
-            this.listData = res;
-            console.log(this.listData)
-        })
-    }
-} 
+  constructor(private apiServices: MockService) {}
+  ngOnInit(): void {
+    this.apiServices.getAllProducts().subscribe((res) => {
+      this.listData = res;
+    });
+  }
+
+  onSubmitForm(value: any) {
+    console.log(value, "...")
+    this.apiServices.getSearchProducts(value?.search).subscribe((res) => {
+      this.listData = res;
+    });
+  }
+
+  onSubmitFormVintage(search: string, indexTab: number) {
+    this.indexTab = indexTab;
+    this.apiServices.getSearchProductsVintage(search).subscribe((res) => {
+      this.listData = res;
+    });
+  }
+}

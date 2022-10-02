@@ -74,7 +74,10 @@
   }
   .border-none{
     border: none;
-    background-color: white;
+    // background-color: white;
+  }
+  .input-search{
+    padding-left: 40px;
   }
   .navbar_between {
     display: flex;
@@ -498,7 +501,9 @@
     }
   }
   
-
+.active{
+  background-color: #00d98b
+}
 
 
   @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap");
@@ -618,7 +623,10 @@ a {
 }
 .btn_grey {
   border: 0;
+}
+.active{
   background-color: #ebf2ff;
+
 }
 .btn_default {
   border: 0;
@@ -789,7 +797,7 @@ a {
 }
 .btn_grey {
   border: 0;
-  background-color: #ebf2ff;
+  // background-color: #ebf2ff;
 }
 .btn_default {
   border: 0;
