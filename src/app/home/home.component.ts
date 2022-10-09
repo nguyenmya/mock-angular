@@ -2,23 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { MockService } from '../services/apiServices';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
+  selector: 'app-home',
+  templateUrl: './home.component.html',
   styleUrls: ['../app.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HomeComponent implements OnInit {
   listData: any = [];
   indexTab: number = 0;
 
-  constructor(private apiServices: MockService) {}
+  constructor(public apiServices: MockService) {}
+
   ngOnInit(): void {
-    this.apiServices.getAllProducts().subscribe((res) => {
-      this.listData = res;
-    });
+    this.apiServices.getAllData()
   }
 
   onSubmitForm(value: any) {
-    console.log(value, "...")
     this.apiServices.getSearchProducts(value?.search).subscribe((res) => {
       this.listData = res;
     });
@@ -26,8 +24,6 @@ export class HeaderComponent implements OnInit {
 
   onSubmitFormVintage(search: string, indexTab: number) {
     this.indexTab = indexTab;
-    this.apiServices.getSearchProductsVintage(search).subscribe((res) => {
-      this.listData = res;
-    });
+    this.apiServices.onSubmitFormVintage(search, indexTab)
   }
 }

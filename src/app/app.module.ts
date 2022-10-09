@@ -5,20 +5,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './home/header.component';
 import { HelloComponent } from './hello/hello.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { HeaderrComponent } from './headerr/headerr.component';
+import { HeaderComponent } from './header/header.component';
 import { CategoryComponent } from './category/category.component';
 import { MenuComponent } from './menu/menu.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
-    // HelloComponent,
-    
-    HeaderComponent,
+    HomeComponent,
     ProductDetailComponent,
-    HeaderrComponent,
+    HeaderComponent,
     CategoryComponent,
     MenuComponent
   ],
